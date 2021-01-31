@@ -36,6 +36,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         String password = user.get().getPassword();
 
         Set<Authority> authorities = user.get().getAuthorities();
+
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         for (Authority authority: authorities) {
             grantedAuthorities.add(new SimpleGrantedAuthority(authority.getAuthority()));
